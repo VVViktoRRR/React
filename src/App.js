@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import Users from "./components/Users/Users";
+import Posts from "./components/Posts/Posts";
+import Comments from "./components/Comments/Comments";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <div className={'wrap'}>
+            <div className={'users'}>
+                {
+                    <Users/>
+                }
+            </div>
+            <div className={'posts'}>
+                {
+                    <Posts/>
+                }
+            </div>
+        </div>
+
+        <div className={'comments'}>
+            {
+                <Comments/>
+            }
+        </div>
     </div>
   );
 }
