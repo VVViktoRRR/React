@@ -1,9 +1,11 @@
 import './App.css';
+import API from "./Components/API/API";
 
 function App() {
+
   return (
     <div>
-<h1> hi people</h1>
+<API/>
     </div>
   );
 }
