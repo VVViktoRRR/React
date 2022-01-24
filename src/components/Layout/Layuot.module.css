@@ -1,0 +1,32 @@
+.header{
+    min-height: 70px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.header a{
+    font-size: 30px;
+    color: bisque;
+    text-decoration: none;
+}
+.header a[class='active'] {
+    text-decoration: underline;
+    color: yellow;
+}
+.wrap{
+width: 98%;
+    margin: 0 auto;
+    height: calc(100vh - 90px);
+    overflow: hidden;
+    overflow-y: auto;
+}
+.footer{
+    min-height: 20px;
+    background-color: black;
+    color: bisque;
+    display: flex;
+    justify-content: right;
+    padding-right: 30px;
+}
