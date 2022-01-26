@@ -1,0 +1,27 @@
+.posts_wrap {
+    display: flex;
+}
+.posts_page_body {
+    width: 98%;
+}
+.posts_page_body_outlet {
+    width: 49%;
+    border-left: 2px solid red;
+}
+.posts_page_body button {
+    margin-left: 10px;
+    background: red;
+    border-radius: 20px;
+}
+.posts_page_body_outlet {
+    padding: 20px;
+}
+.posts_page_body_outlet button {
+    margin-left: 10px;
+    background: red;
+    border-radius: 20px;
+}
+.comments {
+    margin-top: 20px;
+    border-top: 2px solid red;
+}

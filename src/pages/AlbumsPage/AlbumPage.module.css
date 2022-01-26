@@ -1,0 +1,13 @@
+.album_page {
+    border-left: 2px solid silver;
+    padding-left: 10px;
+}
+.album_page button{
+    background: darkblue;
+    color: cornsilk;
+    border-radius: 20px;
+    height: 30px;
+}
+.photo {
+    border-left: 2px solid silver;
+}

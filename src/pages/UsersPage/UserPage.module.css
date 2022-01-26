@@ -1,0 +1,33 @@
+.users_wrap {
+    width: 95%;
+    display: flex;
+}
+.users_body {
+    width: 70%;
+}
+.users {
+    margin: 5px;
+    padding-left: 5px;
+    background-color: cornsilk;
+    border: 2px solid palevioletred;
+    display: flex;
+}
+.users button{
+    margin-top: 10px;
+    margin-left: 20px;
+    border-radius: 20px;
+    height: 40px;
+    background: black;
+    color: ghostwhite;
+}
+.users button.album {
+    margin-top: 10px;
+    margin-left: 20px;
+    border-radius: 20px;
+    height: 40px;
+    background: darkblue;
+    color: cornsilk;
+}
+.user_page_autlet {
+    width: 100%;
+}

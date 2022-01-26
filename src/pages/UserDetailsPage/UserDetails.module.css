@@ -1,0 +1,18 @@
+.users_body_right {
+    width: 350%;
+    border-left: 2px solid dodgerblue;
+    border-bottom: 2px solid darkblue;
+    padding-left: 30px;
+}
+.users_body_right button{
+    margin: 20px;
+    border-radius: 20px;
+    height: 40px;
+    background: black;
+    color: ghostwhite;
+}
+.user_posts {
+    width: 350%;
+    padding-left: 30px;
+    border-left: 2px solid cornflowerblue;
+}
