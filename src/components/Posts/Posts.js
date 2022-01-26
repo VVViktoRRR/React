@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavLink, Outlet} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const Posts = ({posts}) => {
     return (
@@ -7,7 +7,7 @@ const Posts = ({posts}) => {
               <ul>
                     <li>
                         {posts.title}
-                        <NavLink to={posts.id.toString()} state = {posts}><button> Post details </button></NavLink>
+                        <Link to={posts.id.toString()} state = {posts}><button style={{marginLeft:'5px'}}> Post details </button></Link>
                     </li>
               </ul>
         </div>

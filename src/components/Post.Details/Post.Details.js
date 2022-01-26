@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {postServices} from "../../services/post.services";
-import {NavLink, Outlet, useLocation, useParams} from "react-router-dom";
+import {Link, Outlet, useLocation, useParams} from "react-router-dom";
 
 const PostDetails = () => {
     const [post, setPost] = useState( []);
@@ -24,7 +24,7 @@ const PostDetails = () => {
                     <p>id:<b> {post.id}</b> </p>
                     <p>title:<b> {post.title}</b> </p>
                     <p>body: <b>{post.body}</b></p>
-                    <NavLink to={'comments'}><button> Post Comments </button></NavLink>
+                    <Link to={'comments'}><button> Post Comments </button></Link>
                  </div>
                 <Outlet/>
             </div>

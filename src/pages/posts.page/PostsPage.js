@@ -1,7 +1,9 @@
+import {Outlet} from "react-router-dom";
 import React, {useEffect, useState} from 'react';
+
 import {postServices} from "../../services/post.services";
 import {Posts} from "../../components/Posts/Posts";
-import {Outlet} from "react-router-dom";
+
 
 const PostsPage = () => {
     const [posts, setPosts] = useState( [])
