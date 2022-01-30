@@ -1,24 +1,2 @@
-button {
-    background-color: dodgerblue;
-    margin: 3px;
-}
-.wrap {
-    border: 3px solid black;
-    width: 750px;
-    margin-left: 50px;
-    padding: 20px;
-    background: silver;
-}
-.wrap_body {
-display: flex;
-}
-.wrap_box {
-    border: 3px solid red;
-    margin-left: 20px;
-    padding: 5px;
-    background: pink;
-}
-.counter {
-    margin-left: 85px;
-}
+
 

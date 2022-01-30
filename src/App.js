@@ -1,57 +1,45 @@
+import {useReducer, useState} from "react";
 import './App.css';
-import {useReducer} from "react";
+import  {Animals} from "./components";
+import Form from "./components/form/Form";
 
-const reducer = ( state, action) => {
+
+const reduser = (state, action) => {
     switch (action.type){
-        case 'inc':
-            return {...state, count1: state.count1 +1}
-        case 'dec':
-            return {...state, count1: state.count1 - 1}
-        case 'reset':
-            return {...state, count1: 0}
-        case 'inc+2':
-            return {...state, count2: state.count2 +2}
-        case 'dec-2':
-            return {...state, count2: state.count2 - 2}
-        case 'reset2':
-            return {...state, count2: 0}
-        case 'inc+5':
-            return {...state, count3: state.count3 +5}
-        case 'dec-5':
-            return {...state, count3: state.count3 - 5}
-        case 'reset3':
-            return {...state, count3: 0}
+        case "ADD_CAT":
+            return {...state, cats:[...state.cats, action.payload.cat]}
+
+        case "ADD_DOG":
+            return {...state, dogs:[...state.dogs, action.payload.dog]}
+
+        case "DEL_CAT":
+            return {...state, cats:state.cats.filter(cat => cat.id!==action.payload.id)}
+
+        case "DEL_DOG":
+            return {...state, dogs:state.dogs.filter(dog => dog.id!==action.payload.id)}
+
         default:
-            throw new Error('Error')
-            }
-        }
-    function App() {
-    const [state, dispatch] = useReducer(reducer,{count1:0, count2:0, count3:0});
-
-      return (
-        <div className={'wrap'}>
-            <div className={'wrap_body'}>
-                <div className={'wrap_box'}>
-                    <div className={'counter'}> {state.count1}</div>
-                    <button onClick={()=> dispatch({type:'inc'})}>INC + 1</button>
-                    <button onClick={()=> dispatch({type:'dec'})}>DEC - 1</button>
-                    <button onClick={()=> dispatch({type:'reset'})}>RESET</button>
-                </div>
-                <div className={'wrap_box'}>
-                    <div className={'counter'}> {state.count2}</div>
-                    <button onClick={()=> dispatch({type:'inc+2'})}>INC + 2</button>
-                    <button onClick={()=> dispatch({type:'dec-2'})}>DEC - 2</button>
-                    <button onClick={()=> dispatch({type:'reset2'})}>RESET</button>
-                </div>
-                <div className={'wrap_box'}>
-                    <div className={'counter'}> {state.count3}</div>
-                    <button onClick={()=> dispatch({type:'inc+5'})}>INC + 5</button>
-                    <button onClick={()=> dispatch({type:'dec-5'})}>DEC - 5</button>
-                    <button onClick={()=> dispatch({type:'reset3', })}>RESET</button>
-                </div>
-            </div>
-        </div>
-      );
+            return state
     }
+}
+function App() {
+    const [animals, dispatch] = useReducer(reduser, {cats: [], dogs: []})
 
-export default App;
+
+
+
+    const getFormData = (data) => {
+        dispatch( [...animals, {id:new Date().getTime(), ...data}])
+    }
+    const DEL = (id) => {
+        dispatch(animals.filter(animal => animal.id !== id))
+    }
+    return (
+        <div>
+            <h1 style={{marginLeft: '350px'}}> Animals </h1>
+                <Form getFormData={getFormData}/>
+                <Animals animals={animals} DEL={DEL}/>
+        </div>
+    );
+    }
+    export default App;
