@@ -1,23 +1,35 @@
-import React from 'react';
-import {useForm} from "react-hook-form";
+import React, {useReducer, useRef} from 'react';
 
-const Form = ({getFormData}) => {
-    const {handleSubmit, register, reset } = useForm()
-    const formAnimal = (data) => {
-        getFormData(data)
-        reset()
+const Form = ({dispatch}) => {
+    const catInput = useRef();
+    const dogInput = useRef();
+
+    const form = (e) => {
+        e.preventDefault()
+        e.target.reset()
     }
+    const  addCat =()=> {
+        dispatch({type:"ADD_CAT", payload:{cat:catInput.current.value}})
+      }
+
+   const addDog =()=> {
+        dispatch({type:"ADD_DOG", payload:{dog:dogInput.current.value}})
+      }
+
     return (
         <div>
-            <form onSubmit={handleSubmit(formAnimal)}>
-                <label style={{marginLeft: '50px'}}> Name Cat: <input type="text" {...register('cat')} /></label>
-                <button style={{marginLeft: '20px', background: 'silver', borderRadius: '20px'}}> add </button>
-                <label style={{marginLeft: '50px'}}> Name Dog: <input type="text" {...register('dog')} /></label>
-                <button style={{marginLeft: '20px', background: 'silver', borderRadius: '20px'}}> add </button>
+            <form onSubmit={form} style={{padding:'10px'}}>
+                <label style={{marginLeft:'50px'}}>
+                    Cat:
+                    <input type={'text'} ref={catInput} placeholder={'name _____'} ></input></label>
+                <button onClick={addCat}> add</button>
+                <label style={{marginLeft:'50px'}}>
+                    Dog:
+                    <input input type={'text'} ref={dogInput} placeholder={'name ______'} ></input></label>
+                <button onClick={addDog}> add</button>
             </form>
         </div>
     );
 };
 
-
-export default Form;
+export {Form};

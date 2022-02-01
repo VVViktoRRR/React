@@ -1,3 +1,5 @@
+export * from "./cats/Cats";
+export * from "./dogs/Dogs"
 export * from "./form/Form"
-export * from "./animals/Animals"
-export * from "./animal/Animal"
+export * from "./cat/Cat"
+export * from "./dog/Dog";

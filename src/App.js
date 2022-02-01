@@ -1,45 +1,19 @@
-import {useReducer, useState} from "react";
-import './App.css';
-import  {Animals} from "./components";
-import Form from "./components/form/Form";
+import React, {useReducer} from 'react';
 
+import {Cats, Dogs, Form} from "./components";
+import {Animals} from "./reduser/Reduser";
 
-const reduser = (state, action) => {
-    switch (action.type){
-        case "ADD_CAT":
-            return {...state, cats:[...state.cats, action.payload.cat]}
-
-        case "ADD_DOG":
-            return {...state, dogs:[...state.dogs, action.payload.dog]}
-
-        case "DEL_CAT":
-            return {...state, cats:state.cats.filter(cat => cat.id!==action.payload.id)}
-
-        case "DEL_DOG":
-            return {...state, dogs:state.dogs.filter(dog => dog.id!==action.payload.id)}
-
-        default:
-            return state
-    }
-}
-function App() {
-    const [animals, dispatch] = useReducer(reduser, {cats: [], dogs: []})
-
-
-
-
-    const getFormData = (data) => {
-        dispatch( [...animals, {id:new Date().getTime(), ...data}])
-    }
-    const DEL = (id) => {
-        dispatch(animals.filter(animal => animal.id !== id))
-    }
+const App = () => {
+    const [{cats, dogs}, dispatch] = useReducer(Animals, {cats:[], dogs:[]})
     return (
         <div>
-            <h1 style={{marginLeft: '350px'}}> Animals </h1>
-                <Form getFormData={getFormData}/>
-                <Animals animals={animals} DEL={DEL}/>
+            <Form dispatch={dispatch}/>
+            <div style={{display:'flex'}}>
+                <Cats cats={cats} dispatch={dispatch}/>
+                <Dogs dogs={dogs} dispatch={dispatch}/>
+            </div>
         </div>
     );
-    }
-    export default App;
+};
+
+export default App;
