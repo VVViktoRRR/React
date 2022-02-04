@@ -1,9 +1,17 @@
 import './App.css';
+import {Cars, Form} from "./components";
+import {useState} from "react";
+
+
 
 function App() {
+    const [cars, setCars] = useState( []);
   return (
     <div>
-<h1> hi people</h1>
+      <Form/>
+      <Cars/>
+
+
     </div>
   );
 }
