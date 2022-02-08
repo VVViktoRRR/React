@@ -5,5 +5,6 @@ import {urls} from "../config";
 export const carServices = {
     getAllCars:()=> axiosServices.get(urls.cars).then(value => value.data),
     createCar:(car)=> axiosServices.post(urls.cars, car).then(value => value.data),
-    deleteCarById:(id)=> axiosServices.delete(`${urls.cars}/${id}`)
+    deleteCarById:(id)=> axiosServices.delete(`${urls.cars}/${id}`),
+    updateCarById:(id, car)=> axiosServices.patch(`${urls.cars}/${id}`, car).then(value => value.data)
 }
