@@ -13,6 +13,7 @@ const Form = () => {
        if (updateCar === null){
            dispatch(createAuto({data}));
            reset()
+           return
           }
        dispatch(updateById({id:updateCar.id, car:data}))
        reset();
