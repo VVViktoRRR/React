@@ -4,12 +4,12 @@ import {useDispatch, useSelector} from "react-redux";
 import {Car} from "../car/Car";
 import {getAllAuto} from "../../store";
 
-const Cars = () => {
+const Cars = ({trigger}) => {
    const {cars, status, error} = useSelector(state => state['carReducer']);
    const dispatch = useDispatch()
    useEffect(() => {
        dispatch(getAllAuto())
-   }, [])
+   }, [trigger])
     return (
         <div style={{display:'flex', width:'98%', flexWrap:'wrap'}}>
 
