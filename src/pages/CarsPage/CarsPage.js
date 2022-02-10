@@ -9,7 +9,7 @@ const CarsPage = () => {
     }
     return (
         <div>
-            Cars
+            <h2> Cars: </h2>
 
             <Form update={update}/>
             <Cars trigger={trigger}/>
