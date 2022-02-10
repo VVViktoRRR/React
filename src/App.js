@@ -1,17 +1,19 @@
 import './App.css';
-import {Cars, Form} from "./components";
-import {useState} from "react";
+import {Route, Routes} from "react-router-dom";
+import {CarsPage, CommentsPage, HomePage, PostsPage, UsersPage} from "./pages";
+
 
 function App() {
-    const [trigger, setTrigger] = useState()
-    const [cars, setCars] = useState( []);
-    const update = data => {
-        setTrigger(data)
-    }
+
   return (
     <div>
-      <Form update={update}/>
-      <Cars trigger={trigger}/>
+     <Routes>
+         <Route path={'/'} element={<HomePage/>}/>
+         <Route path={'/users'} element={<UsersPage/>}/>
+         <Route path={'/posts'} element={<PostsPage/>}/>
+         <Route path={'/comments'} element={<CommentsPage/>}/>
+         <Route path={'/cars'} element={<CarsPage/>}/>
+     </Routes>
     </div>
   );
 }
