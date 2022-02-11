@@ -1,0 +1,33 @@
+.header {
+    background-color: red;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    display: flex;
+}
+.header a{
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+}
+.header a[class='active']{
+    text-decoration: underline;
+    color: black;
+}
+.outlet {
+    width: 97%;
+    margin: 0 auto;
+    height: calc(100vh - 70px);
+    overflow: hidden;
+    overflow-y: auto;
+}
+.footer {
+    background-color: red;
+    min-height: 20px;
+    padding-right: 50px;
+    display: flex;
+    color: white;
+    justify-content: end;
+    gap: 50px;
+}

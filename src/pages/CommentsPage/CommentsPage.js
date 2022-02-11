@@ -1,9 +1,11 @@
 import React from 'react';
+import {Comments} from "../../components";
 
 const CommentsPage = () => {
     return (
         <div>
-            CommentsPage
+            <h2> Comments : </h2>
+            <Comments/>
         </div>
     );
 };

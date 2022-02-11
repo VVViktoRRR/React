@@ -1,11 +1,11 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
 import {getAllAuto} from "../../store";
 import {Car} from "../car/Car";
 
 const Cars = ({trigger}) => {
-   const {cars, status, error} = useSelector(state => state['carReducer']);
+    const {cars, status, error} = useSelector(state => state['carReducer']);
    const dispatch = useDispatch()
    useEffect(() => {
        dispatch(getAllAuto())

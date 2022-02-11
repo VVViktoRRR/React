@@ -32,7 +32,7 @@ const Form = ({update}) => {
     }, [updateCar])
 
     return (
-        <div>
+        <div style={{marginLeft:'500px'}}>
             <form style={{margin:'50px'}} onSubmit={handleSubmit(submit)} >
                 <div>
                     <label style={{margin:'5px'}}/>
@@ -44,18 +44,18 @@ const Form = ({update}) => {
                 <div>
                     <label style={{margin:'5px'}}/>
                     Price:
-                    <input style={{margin:'5px'}} type='text' placeholder={'price'} {...register('price')}/>
+                    <input style={{marginLeft:'16px', marginTop: '5px'}} type='text' placeholder={'price'} {...register('price')}/>
                     {errors.price && <span>{errors.price.message}</span>}
                 </div>
 
                 <div>
                     <label style={{margin:'5px'}}/>
                     Year:
-                    <input style={{margin:'5px'}} type='text' placeholder={'year'} {...register('year')}/>
+                    <input style={{marginLeft:'20px', marginTop: '10px'}} type='text' placeholder={'year'} {...register('year')}/>
                     {errors.year && <span>{errors.year.message}</span>}
                 </div>
 
-                <button>Save</button>
+                <button style={{width:'240px', marginTop: '10px'}}>Save</button>
           </form>
 
         </div>

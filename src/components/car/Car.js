@@ -5,9 +5,10 @@ import {delCar, deleteAuto, updateToCar} from "../../store";
 
 const Car = ({car}) => {
     const {id, model, price, year} = car;
+    console.log(id)
     const dispatch = useDispatch()
     return (
-        <div style={{border:'2px solid blue', margin:'10px', width: '20%', padding:'5px', display:'flex'}}>
+        <div style={{border:'2px solid red', margin:'20px', width: '20%', padding:'5px', display:'flex'}}>
             <div>
                 <div style={{margin:'20px'}}> Model:  {model}</div>
                 <div style={{margin:'20px'}}> Price: {price}</div>
