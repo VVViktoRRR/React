@@ -1,0 +1,11 @@
+.from {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 500px;
+    justify-content: center;
+    align-items: center;
+}
+.from button {
+    margin-left: 20px;
+    font-size: 20px;
+}
